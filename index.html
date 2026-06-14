@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio Ro2Hair — Rosana Teles | Especialista em Megahair</title>
+  <meta name="description" content="Especialista em megahair com mais de 20 anos de experiência. Fita adesiva e ponto americano invisível. Atendimento premium em São Paulo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @font-face {
+      font-family: 'Buffalo';
+      src: url('assets/fonts/Buffalo.woff2') format('woff2'),
+           url('assets/fonts/Buffalo.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --tiffany: #1e9f92;
+      --orange: #f87600;
+      --white: #FFFFFF;
+      --nude: #F6F1EC;
+      --text: #1A1A1A;
+      --muted: #6B6B6B;
+      --display: 'Belleza', Georgia, serif;
+      --script: 'Buffalo', cursive;
+      --sans: 'Montserrat', sans-serif;
+    }
+
+    .buffalo {
+      font-family: var(--script);
+      font-style: normal;
+      color: var(--tiffany);
+      font-size: 1.08em;
+      letter-spacing: 0.01em;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      background: var(--white);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 60px;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid rgba(30,159,146,0.2);
+      transition: padding 0.3s, box-shadow 0.3s;
+    }
+
+    nav.scrolled {
+      padding: 10px 60px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    }
+
+    .nav-logo img {
+      height: 110px;
+      width: auto;
+      max-width: 360px;
+      display: block;
+      object-fit: contain;
+      transition: height 0.3s;
+    }
+
+    nav.scrolled .nav-logo img { height: 80px; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--tiffany); }
+
+    .btn-nav {
+      font-size: 11px !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.14em !important;
+      color: var(--white) !important;
+      background: var(--tiffany);
+      padding: 11px 24px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-nav:hover { background: #178a7e !important; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 110px 60px 80px;
+      background: var(--white);
+      gap: 60px;
+    }
+
+    .hero-content { max-width: 540px; }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 28px;
+    }
+
+    .hero-title {
+      font-family: var(--display);
+      font-size: clamp(40px, 4.5vw, 62px);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--tiffany);
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--muted);
+      max-width: 420px;
+      margin-bottom: 44px;
+      line-height: 1.85;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--tiffany);
+      padding: 15px 36px;
+      text-decoration: none;
+      transition: background 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: #178a7e; }
+
+    .btn-outline {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+      background: transparent;
+      border: 1px solid #d0c9c1;
+      padding: 15px 36px;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover { border-color: var(--tiffany); color: var(--tiffany); }
+
+    .hero-image {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 460px;
+      height: auto;
+      display: block;
+    }
+
+    /* ── TICKER ── */
+    .ticker {
+      background: var(--tiffany);
+      overflow: hidden;
+      padding: 13px 0;
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 0;
+      animation: ticker 28s linear infinite;
+      white-space: nowrap;
+    }
+
+    .ticker-item {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white);
+      flex-shrink: 0;
+      padding: 0 48px;
+    }
+
+    .ticker-item::after {
+      content: '✦';
+      margin-left: 48px;
+      color: rgba(255,255,255,0.45);
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 100px 60px; }
+
+    .section-tag {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .section-title {
+      font-family: var(--display);
+      font-size: clamp(32px, 3.8vw, 50px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+
+    .section-title em { font-style: italic; }
+
+    .section-text {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.9;
+    }
+
+    /* ── ANTES E DEPOIS ── */
+    #antes-depois {
+      background: var(--text);
+      padding: 100px 60px;
+    }
+
+    #antes-depois .section-tag { color: var(--orange); }
+    #antes-depois .section-title { color: var(--white); }
+
+    .antes-depois-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .antes-depois-subtitulo {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      margin-top: 8px;
+      letter-spacing: 0.06em;
+    }
+
+    .carrossel-wrapper {
+      position: relative;
+      overflow: hidden;
+      max-width: 374px;
+      margin: 0 auto;
+    }
+
+    .carrossel-track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .carrossel-slide {
+      min-width: 100%;
+      position: relative;
+    }
+
+    .carrossel-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: brightness(1.12) contrast(1.08) saturate(1.15);
+    }
+
+    .carrossel-badge {
+      position: absolute;
+      top: 16px;
+      display: flex;
+      gap: 0;
+    }
+
+    .carrossel-badge span {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      padding: 5px 12px;
+    }
+
+    .badge-antes { background: rgba(0,0,0,0.5); left: 0; }
+    .badge-seta  { background: rgba(30,159,146,0.7); }
+    .badge-depois { background: rgba(0,0,0,0.5); }
+
+    .carrossel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.95);
+      border: none;
+      width: 46px;
+      height: 46px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--text);
+      transition: background 0.2s, color 0.2s;
+      z-index: 10;
+    }
+
+    .carrossel-btn:hover { background: var(--tiffany); color: var(--white); }
+    .carrossel-btn.prev { left: 12px; }
+    .carrossel-btn.next { right: 12px; }
+
+    .carrossel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .carrossel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      border: none;
+    }
+
+    .carrossel-dot.active {
+      background: var(--tiffany);
+      transform: scale(1.3);
+    }
+
+    .carrossel-contador {
+      text-align: center;
+      margin-top: 14px;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.35);
+    }
+
+    @media (max-width: 960px) {
+      #antes-depois { padding: 70px 24px; }
+      .carrossel-slide img { max-height: 300px; }
+      .carrossel-btn { width: 36px; height: 36px; font-size: 14px; }
+    }
+
+    /* ── SOBRE ── */
+    #sobre {
+      background: var(--nude);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .sobre-photo {
+      height: 600px;
+      overflow: hidden;
+    }
+
+    .sobre-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .sobre-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .stat {
+      border-top: 1px solid var(--tiffany);
+      padding-top: 18px;
+    }
+
+    .stat-number {
+      font-family: var(--display);
+      font-size: 40px;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      margin-top: 6px;
+    }
+
+    /* ── SERVIÇOS ── */
+    #servicos { background: var(--white); }
+
+    .servicos-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 60px;
+    }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .servico-card {
+      background: var(--nude);
+      padding: 44px 36px;
+      transition: background 0.3s;
+    }
+
+    .servico-card:hover { background: #ede7e0; }
+
+    .servico-num {
+      font-family: var(--display);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--orange);
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+    }
+
+    .servico-titulo {
+      font-family: var(--display);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    .servico-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    /* ── ATENDIMENTO INDIVIDUAL ── */
+    .atendimento-destaque {
+      background: var(--nude);
+      border-top: 1px solid rgba(30,159,146,0.3);
+      border-bottom: 1px solid rgba(30,159,146,0.3);
+      padding: 60px;
+    }
+
+    .atendimento-inner {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .atendimento-icone {
+      font-size: 28px;
+      color: var(--tiffany);
+      flex-shrink: 0;
+    }
+
+    .atendimento-texto {
+      font-family: var(--display);
+      font-size: clamp(20px, 2.2vw, 28px);
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .atendimento-texto em {
+      font-style: italic;
+      color: var(--tiffany);
+    }
+
+    @media (max-width: 960px) {
+      .atendimento-destaque { padding: 48px 24px; }
+      .atendimento-inner { flex-direction: column; text-align: center; gap: 28px; }
+    }
+
+    /* ── DIFERENCIAIS ── */
+    #diferenciais {
+      background: var(--text);
+      padding: 90px 60px;
+    }
+
+    .diferenciais-inner {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    #diferenciais .section-tag { color: var(--orange); }
+    #diferenciais .section-title { color: var(--white); }
+
+    .diferenciais-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .diferencial-item {
+      background: rgba(255,255,255,0.04);
+      padding: 32px 28px;
+      border-left: 1px solid rgba(30,159,146,0.25);
+      transition: background 0.2s;
+    }
+
+    .diferencial-item:hover { background: rgba(255,255,255,0.07); }
+
+    .diferencial-titulo {
+      font-family: var(--display);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .diferencial-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.8;
+    }
+
+    /* ── DEPOIMENTOS ── */
+    #depoimentos { background: var(--nude); }
+
+    .depoimentos-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .depoimentos-header .section-title { margin: 0 auto; }
+
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .depoimento-card {
+      background: var(--white);
+      padding: 36px 32px;
+    }
+
+    .stars {
+      color: var(--orange);
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .depoimento-texto {
+      font-family: var(--display);
+      font-size: 17px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .depoimento-nome {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── CONTATO ── */
+    #contato {
+      background: var(--white);
+      padding: 100px 60px;
+    }
+
+    .contato-topo {
+      margin-bottom: 44px;
+    }
+
+    .contato-info-topo {
+      display: flex;
+      gap: 64px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+
+    .contato-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contato-item {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 28px;
+    }
+
+    .contato-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--tiffany);
+    }
+
+    .contato-valor {
+      font-family: var(--display);
+      font-size: 19px;
+      font-weight: 300;
+      color: var(--text);
+    }
+
+    .contato-mapa {
+      text-decoration: none;
+      color: var(--text);
+      line-height: 1.5;
+      transition: color 0.2s;
+    }
+
+    .contato-mapa:hover { color: var(--tiffany); }
+
+    .contato-cta {
+      margin-top: 4px;
+    }
+
+    .contato-mapa-embed {
+      width: 100%;
+      height: 260px;
+      border: 0;
+      display: block;
+      filter: grayscale(20%) contrast(1.05);
+    }
+
+    /* ── PARA QUEM ── */
+    #para-quem {
+      background: var(--white);
+      padding: 100px 60px;
+    }
+
+    .para-quem-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .para-quem-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .para-quem-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      background: var(--nude);
+      padding: 24px 28px;
+      transition: background 0.2s;
+    }
+
+    .para-quem-item:hover { background: #ede7e0; }
+
+    .para-quem-icone {
+      color: var(--orange);
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .para-quem-texto {
+      font-family: var(--display);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text);
+      padding: 36px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .footer-logo img {
+      height: 68px;
+      width: auto;
+      max-width: 260px;
+      display: block;
+      object-fit: contain;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--tiffany); }
+
+    .footer-copy {
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ── WHATSAPP FLOAT ── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 200;
+      background: #25D366;
+      color: var(--white);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+      transition: transform 0.2s;
+    }
+
+    .whatsapp-float:hover { transform: scale(1.08); }
+    .whatsapp-float svg { width: 28px; height: 28px; fill: white; }
+
+    /* ── RESPONSIVO ── */
+    @media (max-width: 960px) {
+      nav { padding: 16px 24px; }
+      nav.scrolled { padding: 10px 24px; }
+      .nav-links { display: none; }
+
+      /* Hero */
+      #hero {
+        grid-template-columns: 1fr;
+        padding: 100px 24px 48px;
+        text-align: center;
+        gap: 32px;
+      }
+      .hero-content { max-width: 100%; }
+      .hero-subtitle { max-width: 100%; }
+      .hero-ctas { justify-content: center; }
+      .hero-image {
+        height: auto;        /* remove altura fixa — imagem respira */
+        justify-content: center;
+      }
+      .hero-image img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;        /* mantém proporção original */
+      }
+
+      section { padding: 60px 20px; }
+
+      /* Sobre */
+      #sobre { grid-template-columns: 1fr; gap: 40px; }
+      .sobre-photo {
+        height: auto;        /* remove altura fixa */
+      }
+      .sobre-photo img {
+        width: 100%;
+        height: auto;
+        object-fit: unset;   /* mostra imagem inteira sem corte */
+      }
+      .sobre-stats { grid-template-columns: 1fr 1fr; gap: 20px; }
+
+      /* Para quem */
+      .para-quem-inner { grid-template-columns: 1fr; gap: 32px; }
+      .para-quem-texto { font-size: 15px; }
+
+      /* Serviços */
+      .servicos-header { grid-template-columns: 1fr; gap: 16px; }
+      .servicos-grid { grid-template-columns: 1fr; gap: 2px; }
+      .servico-card { padding: 32px 24px; }
+
+      /* Antes e depois */
+      #antes-depois { padding: 60px 20px; }
+      .carrossel-wrapper { max-width: 100%; }
+
+      /* Diferenciais */
+      .diferenciais-inner { grid-template-columns: 1fr; gap: 36px; }
+      #diferenciais { padding: 60px 20px; }
+      .diferenciais-grid { grid-template-columns: 1fr; }
+
+      /* Depoimentos */
+      .depoimentos-grid { grid-template-columns: 1fr; }
+
+      /* Contato */
+      .contato-grid { grid-template-columns: 1fr; gap: 32px; }
+      .contato-info-topo { flex-direction: column; gap: 0; }
+      .contato-mapa-embed { height: 240px; }
+
+      /* Atendimento */
+      .atendimento-destaque { padding: 48px 20px; }
+      .atendimento-inner { flex-direction: column; text-align: center; gap: 24px; }
+      .atendimento-texto { font-size: 20px; }
+
+      /* Footer */
+      footer {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+        padding: 28px 20px;
+      }
+      .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+
+      /* Carrossel mobile */
+      .carrossel-btn { width: 36px; height: 36px; font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">
+      <img src="assets/logo-colorida.png" alt="Rosana Teles — Studio Ro2Hair" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#contato">Contato</a></li>
+      <li>
+        <a href="https://wa.me/551143741168" target="_blank" class="btn-nav">Agendar</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <span class="hero-tag">✦ Especialista em Megahair</span>
+      <h1 class="hero-title">
+        Transformamos seu<br>
+        cabelo e sua<br>
+        <em class="buffalo">autoestima</em><br>
+        com Megahair.
+      </h1>
+      <p class="hero-subtitle">
+        Megahair de alta qualidade com técnicas que unem naturalidade, segurança e resultado real. Mais de 10 anos de experiência.
+      </p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/551143741168?text=Oi%20Rosana%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" class="btn-primary">Agendar avaliação</a>
+        <a href="#sobre" class="btn-outline">Conhecer a Rosana</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="assets/foto-hero.png" alt="Rosana Teles com cabelos da coleção Studio Ro2Hair" />
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="ticker-item">Fita Adesiva</span>
+      <span class="ticker-item">Ponto Americano Invisível</span>
+      <span class="ticker-item">10 anos de experiência</span>
+      <span class="ticker-item">Naturalidade e Segurança</span>
+      <span class="ticker-item">Cabelos Premium</span>
+      <span class="ticker-item">Nanopele Invisível</span>
+      <span class="ticker-item">Fita Adesiva</span>
+      <span class="ticker-item">Ponto Americano Invisível</span>
+      <span class="ticker-item">10 anos de experiência</span>
+      <span class="ticker-item">Naturalidade e Segurança</span>
+      <span class="ticker-item">Cabelos Premium</span>
+      <span class="ticker-item">Nanopele Invisível</span>
+    </div>
+  </div>
+
+  <!-- PARA QUEM -->
+  <section id="para-quem">
+    <div class="para-quem-inner">
+      <div>
+        <span class="section-tag">✦ Para quem é</span>
+        <h2 class="section-title">
+          O Megahair é<br>
+          para <em>você</em>?
+        </h2>
+        <p class="section-text">
+          Seja qual for o seu motivo, existe uma solução pensada para o seu cabelo. Cada caso é único — e é exatamente assim que trato cada cliente.
+        </p>
+      </div>
+      <div class="para-quem-grid">
+        <div class="para-quem-item">
+          <span class="para-quem-icone">◆</span>
+          <span class="para-quem-texto">Deseja mais comprimento sem precisar esperar anos pelo crescimento natural dos fios</span>
+        </div>
+        <div class="para-quem-item">
+          <span class="para-quem-icone">◆</span>
+          <span class="para-quem-texto">Busca mais volume e densidade para cabelos finos ou com pouco corpo</span>
+        </div>
+        <div class="para-quem-item">
+          <span class="para-quem-icone">◆</span>
+          <span class="para-quem-texto">Sofre com pontas ralas e deseja um cabelo mais encorpado e harmonioso</span>
+        </div>
+        <div class="para-quem-item">
+          <span class="para-quem-icone">◆</span>
+          <span class="para-quem-texto">Está se recuperando de um corte químico e quer recuperar visualmente comprimento e autoestima</span>
+        </div>
+        <div class="para-quem-item">
+          <span class="para-quem-icone">◆</span>
+          <span class="para-quem-texto">Sofreu quebra causada por química, descoloração, chapinha ou excesso de calor</span>
+        </div>
+        <div class="para-quem-item">
+          <span class="para-quem-icone">◆</span>
+          <span class="para-quem-texto">Está passando pela transição capilar e não quer enfrentar esse processo sozinha</span>
+        </div>
+        <div class="para-quem-item">
+          <span class="para-quem-icone">◆</span>
+          <span class="para-quem-texto">Procura cachos personalizados que respeitem sua curvatura natural e tornem a transição imperceptível</span>
+        </div>
+        <div class="para-quem-item">
+          <span class="para-quem-icone">◆</span>
+          <span class="para-quem-texto">Sonha com um resultado natural, confortável e que combine com seu estilo de vida</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTES E DEPOIS -->
+  <section id="antes-depois">
+    <div class="antes-depois-header">
+      <span class="section-tag">✦ Resultados reais</span>
+      <h2 class="section-title">Antes e <em class="buffalo">Depois</em></h2>
+    </div>
+    <div class="carrossel-wrapper">
+      <div class="carrossel-track" id="carrosselTrack">
+        <!-- CACHEADOS -->
+        <div class="carrossel-slide"><img src="assets/canva-2.png" alt="Antes e depois megahair cacheado" /></div>
+        <div class="carrossel-slide"><img src="assets/canva-8.png" alt="Antes e depois megahair cacheado" /></div>
+        <!-- LOIROS -->
+        <div class="carrossel-slide"><img src="assets/canva-3.png" alt="Antes e depois megahair loiro" /></div>
+        <div class="carrossel-slide"><img src="assets/canva-6.png" alt="Antes e depois megahair loiro" /></div>
+        <div class="carrossel-slide"><img src="assets/canva-14.png" alt="Antes e depois megahair loiro" /></div>
+        <div class="carrossel-slide"><img src="assets/canva-18.png" alt="Antes e depois megahair loiro" /></div>
+        <!-- CASTANHOS / PRETOS -->
+        <div class="carrossel-slide"><img src="assets/canva-1.png" alt="Antes e depois megahair" /></div>
+        <div class="carrossel-slide"><img src="assets/canva-4.png" alt="Antes e depois megahair" /></div>
+        <div class="carrossel-slide"><img src="assets/canva-5.png" alt="Antes e depois megahair" /></div>
+        <div class="carrossel-slide"><img src="assets/canva-7.png" alt="Antes e depois megahair" /></div>
+        <div class="carrossel-slide"><img src="assets/canva-11.png" alt="Antes e depois megahair" /></div>
+        <div class="carrossel-slide"><img src="assets/canva-12.png" alt="Antes e depois megahair" /></div>
+        <div class="carrossel-slide"><img src="assets/canva-13.png" alt="Antes e depois megahair" /></div>
+        <div class="carrossel-slide"><img src="assets/canva-15.png" alt="Antes e depois megahair" /></div>
+        <div class="carrossel-slide"><img src="assets/canva-16.png" alt="Antes e depois megahair" /></div>
+        <div class="carrossel-slide"><img src="assets/canva-17.png" alt="Antes e depois megahair" /></div>
+        <div class="carrossel-slide"><img src="assets/canva-19.png" alt="Antes e depois megahair" /></div>
+        <div class="carrossel-slide"><img src="assets/canva-20.png" alt="Antes e depois megahair" /></div>
+        <div class="carrossel-slide"><img src="assets/canva-21.png" alt="Antes e depois megahair" /></div>
+        <div class="carrossel-slide"><img src="assets/canva-22.png" alt="Antes e depois megahair" /></div>
+        <div class="carrossel-slide"><img src="assets/canva-23.png" alt="Antes e depois megahair" /></div>
+        <div class="carrossel-slide"><img src="assets/canva-24.png" alt="Antes e depois megahair" /></div>
+      </div>
+
+      <button class="carrossel-btn prev" onclick="moverCarrossel(-1)">‹</button>
+      <button class="carrossel-btn next" onclick="moverCarrossel(1)">›</button>
+    </div>
+
+    <div class="carrossel-dots" id="carrosselDots"></div>
+    <div class="carrossel-contador" id="carrosselContador">1 / 22</div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="sobre-photo">
+      <img src="assets/foto-sobre.png" alt="Rosana Teles — especialista em megahair" />
+    </div>
+    <div class="sobre-content">
+      <span class="section-tag">✦ Sobre</span>
+      <h2 class="section-title">
+        Especialista que<br>
+        entende por <em class="buffalo">dentro</em>.
+      </h2>
+      <p class="section-text">
+        Comecei com megahair por necessidade — uma queda severa de cabelo me trouxe para esse mundo há mais de 20 anos. Hoje, sou especialista com uma perspectiva que poucos profissionais têm: conheço cada detalhe da experiência como usuária e domino cada técnica como profissional.
+      </p>
+      <p class="section-text" style="margin-top: 20px;">
+        Cada atendimento é pensado do zero. Entendo o que você sente porque já senti também. E é exatamente por isso que o resultado é diferente.
+      </p>
+      <div class="sobre-stats">
+        <div class="stat">
+          <div class="stat-number">20+</div>
+          <div class="stat-label">Anos como usuária de megahair</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Anos como profissional especialista</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Técnicas de excelência dominadas</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Atendimento personalizado</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos">
+    <div class="servicos-header">
+      <div>
+        <span class="section-tag">✦ O que oferecemos</span>
+        <h2 class="section-title">
+          Nossos<br>
+          <em class="buffalo">Serviços</em>
+        </h2>
+      </div>
+      <p class="section-text">
+        Seja qual for a sua necessidade, temos uma solução para você. Cada atendimento é pensado para o seu cabelo, seu estilo de vida e o resultado que você merece.
+      </p>
+    </div>
+    <div class="servicos-grid">
+      <div class="servico-card">
+        <div class="servico-num">01</div>
+        <h3 class="servico-titulo">Aplicação e Manutenção</h3>
+        <p class="servico-desc">
+          Trabalhamos com aplicação de megahair em Nanopele Invisível, com os métodos de Fita Adesiva, Ponto Americano e Ponto Invisível. Durante a avaliação, identificamos qual método melhor atende às características únicas do seu cabelo e às suas necessidades do dia a dia.
+        </p>
+      </div>
+      <div class="servico-card">
+        <div class="servico-num">02</div>
+        <h3 class="servico-titulo">Cabelos Humanos Personalizados</h3>
+        <p class="servico-desc">
+          Trabalhamos com cabelos humanos Brasileiros, Vietnamitas e Indianos Premium, cuidadosamente selecionados e tratados. Oferecemos personalização de cor, textura e tamanho para garantir o cabelo dos seus sonhos com uma experiência verdadeiramente exclusiva.
+        </p>
+      </div>
+      <div class="servico-card">
+        <div class="servico-num">03</div>
+        <h3 class="servico-titulo">Confecção e Mudança de Método</h3>
+        <p class="servico-desc">
+          Transformamos cabelos soltos ou megahair de outros métodos em Fita Adesiva Invisível (Invisible Hair) ou Nanopele Invisível, criando soluções personalizadas com naturalidade, conforto e discrição.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATENDIMENTO INDIVIDUAL -->
+  <div class="atendimento-destaque">
+    <div class="atendimento-inner">
+      <span class="atendimento-icone">✦</span>
+      <p class="atendimento-texto">
+        Cada atendimento é <em>individual</em> — dedico atenção exclusiva a uma cliente por vez. Sem pressa. Só você e o seu resultado.
+      </p>
+      <a href="https://wa.me/551143741168?text=Oi%20Rosana%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" class="btn-primary">Agendar meu horário</a>
+    </div>
+  </div>
+
+  <!-- DIFERENCIAIS -->
+  <section id="diferenciais">
+    <div class="diferenciais-inner">
+      <div>
+        <span class="section-tag">✦ Por que a Rosana</span>
+        <h2 class="section-title">
+          O que faz<br>
+          a diferença<br>
+          no <em>resultado</em>.
+        </h2>
+      </div>
+      <div class="diferenciais-grid">
+        <div class="diferencial-item">
+          <div class="diferencial-titulo">Visão de usuária</div>
+          <div class="diferencial-desc">Mais de 20 anos usando megahair. Conheço cada detalhe do que você sente — antes, durante e depois.</div>
+        </div>
+        <div class="diferencial-item">
+          <div class="diferencial-titulo">Técnica com propósito</div>
+          <div class="diferencial-desc">Trabalho com fita adesiva e ponto americano porque acredito que são as técnicas mais seguras e naturais. Não ofereço o que não usaria.</div>
+        </div>
+        <div class="diferencial-item">
+          <div class="diferencial-titulo">Atendimento humanizado</div>
+          <div class="diferencial-desc">Cada cliente é atendida com atenção individual. Sem pressa, sem padrão — só o que funciona pra você.</div>
+        </div>
+        <div class="diferencial-item">
+          <div class="diferencial-titulo">Cabelos selecionados</div>
+          <div class="diferencial-desc">Cuido da qualidade do cabelo com o mesmo cuidado que cuido da aplicação. O resultado começa na escolha do material.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos">
+    <div class="depoimentos-header">
+      <span class="section-tag" style="display:block; text-align:center">✦ Depoimentos</span>
+      <h2 class="section-title" style="text-align:center">
+        O que dizem<br>as <em>clientes</em>.
+      </h2>
+    </div>
+    <div class="depoimentos-grid">
+      <div class="depoimento-card">
+        <div class="stars">★★★★★</div>
+        <p class="depoimento-texto">
+          "A Rosana não aplica megahair — ela transforma. Pela primeira vez me senti completamente natural e confortável. Não volto para nenhuma outra profissional."
+        </p>
+        <div class="depoimento-nome">— Ana Paula M.</div>
+      </div>
+      <div class="depoimento-card">
+        <div class="stars">★★★★★</div>
+        <p class="depoimento-texto">
+          "Fui com medo de parecer artificial. Saí com um cabelo que parece meu de sempre — só mais bonito. Atendimento impecável do início ao fim."
+        </p>
+        <div class="depoimento-nome">— Fernanda C.</div>
+      </div>
+      <div class="depoimento-card">
+        <div class="stars">★★★★★</div>
+        <p class="depoimento-texto">
+          "Além do resultado incrível, a Rosana tem uma sensibilidade diferente. Ela entende o que a gente sente antes mesmo de a gente falar. Isso não tem preço."
+        </p>
+        <div class="depoimento-nome">— Mariana S.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <!-- Cabeçalho + contatos rápidos — largura total -->
+    <div class="contato-topo">
+      <span class="section-tag">✦ Contato</span>
+      <h2 class="section-title">
+        Vamos conversar<br>
+        sobre seu <em>cabelo</em>.
+      </h2>
+      <p class="section-text">
+        O primeiro passo é uma avaliação. Me conta o que você busca e eu te digo o que é possível — com honestidade e compromisso.
+      </p>
+      <div class="contato-info-topo">
+        <div class="contato-item">
+          <span class="contato-label">WhatsApp</span>
+          <span class="contato-valor">(11) 4374-1168</span>
+        </div>
+        <div class="contato-item">
+          <span class="contato-label">Instagram</span>
+          <span class="contato-valor">@ro2hair</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Endereço + Mapa alinhados -->
+    <div class="contato-grid">
+      <div>
+        <div class="contato-item">
+          <span class="contato-label">Endereço</span>
+          <a class="contato-valor contato-mapa" href="https://www.google.com/maps/search/?api=1&query=Estrada+do+Gopiuva,+1337,+Parque+Jandaia,+Carapicu%C3%ADba,+SP,+06330-000" target="_blank">
+            Estrada do Gopiuva, 1337 — Sala 08 Sub Loja<br>
+            Parque Jandaia · Carapicuíba/SP · 06330-000
+          </a>
+        </div>
+        <div class="contato-cta">
+          <a href="https://wa.me/551143741168?text=Oi%20Rosana%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" class="btn-primary">
+            Agendar pelo WhatsApp
+          </a>
+        </div>
+      </div>
+      <iframe
+        class="contato-mapa-embed"
+        src="https://maps.google.com/maps?q=Estrada+do+Gopiuva,+1337,+Parque+Jandaia,+Carapicu%C3%ADba,+SP,+06330-000&output=embed&z=15"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Localização Studio Ro2Hair">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="#hero" class="footer-logo">
+      <img src="assets/logo-branca.png" alt="Studio Ro2Hair — Rosana Teles" />
+    </a>
+    <div class="footer-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="https://instagram.com/ro2hair" target="_blank">Instagram</a>
+      <a href="https://wa.me/551143741168" target="_blank">WhatsApp</a>
+    </div>
+    <div class="footer-copy">© 2025 Studio Ro2Hair</div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/551143741168?text=Oi%20Rosana%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" class="whatsapp-float" title="Chamar no WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+  </a>
+
+  <script>
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Carrossel
+    const totalSlides = 22;
+    let slideAtual = 0;
+
+    const track = document.getElementById('carrosselTrack');
+    const dotsContainer = document.getElementById('carrosselDots');
+    const contador = document.getElementById('carrosselContador');
+
+    // Criar dots
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'carrossel-dot' + (i === 0 ? ' active' : '');
+      dot.onclick = () => irParaSlide(i);
+      dotsContainer.appendChild(dot);
+    }
+
+    function irParaSlide(n) {
+      slideAtual = (n + totalSlides) % totalSlides;
+      track.style.transform = `translateX(-${slideAtual * 100}%)`;
+      document.querySelectorAll('.carrossel-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === slideAtual);
+      });
+      contador.textContent = `${slideAtual + 1} / ${totalSlides}`;
+    }
+
+    function moverCarrossel(direcao) { irParaSlide(slideAtual + direcao); }
+
+    // Auto-avanço
+    setInterval(() => moverCarrossel(1), 4000);
+  </script>
+
+</body>
+</html>
