@@ -650,6 +650,7 @@
       display: flex;
       flex-direction: column;
       gap: 28px;
+      align-items: flex-start;
     }
 
     .contato-logo-wrap { display: block; }
@@ -725,7 +726,8 @@
 
     .contato-mapa-embed {
       width: 100%;
-      height: 260px;
+      aspect-ratio: 1 / 1;
+      height: auto;
       border: 0;
       display: block;
     }
@@ -913,10 +915,10 @@
       .depoimentos-grid { grid-template-columns: 1fr; }
 
       /* Contato */
-      #contato { padding: 48px 20px 0; }
+      #contato { padding: 48px 20px 60px; }
       .contato-inner { grid-template-columns: 1fr; gap: 40px; }
       .contato-col-dir { width: 100%; }
-      .contato-mapa-embed { height: 220px; }
+      .contato-mapa-embed { aspect-ratio: 1/1; height: auto; }
 
       /* Atendimento */
       .atendimento-destaque { padding: 48px 20px; }
