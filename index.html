@@ -101,14 +101,15 @@
     .nav-links a:hover { color: var(--tiffany); }
 
     .btn-nav {
-      font-size: 11px !important;
+      font-size: 10px !important;
       font-weight: 600 !important;
-      letter-spacing: 0.14em !important;
+      letter-spacing: 0.08em !important;
       color: var(--white) !important;
       background: var(--tiffany);
-      padding: 11px 24px;
+      padding: 11px 18px;
       text-decoration: none;
       transition: background 0.2s;
+      white-space: nowrap;
     }
 
     .btn-nav:hover { background: #178a7e !important; }
@@ -642,18 +643,17 @@
       margin-bottom: 44px;
     }
 
-    .contato-info-topo {
-      display: flex;
-      gap: 64px;
-      margin-top: 36px;
-      flex-wrap: wrap;
-    }
-
     .contato-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;
       align-items: start;
+    }
+
+    .contato-direita {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
     .contato-item {
@@ -874,7 +874,6 @@
 
       /* Contato */
       .contato-grid { grid-template-columns: 1fr; gap: 32px; }
-      .contato-info-topo { flex-direction: column; gap: 0; }
       .contato-mapa-embed { height: 240px; }
 
       /* Atendimento */
@@ -1185,7 +1184,6 @@
 
   <!-- CONTATO -->
   <section id="contato">
-    <!-- Cabeçalho + contatos rápidos — largura total -->
     <div class="contato-topo">
       <span class="section-tag">✦ Contato</span>
       <h2 class="section-title">
@@ -1195,7 +1193,11 @@
       <p class="section-text">
         O primeiro passo é uma avaliação. Me conta o que você busca e eu te digo o que é possível, com honestidade e compromisso.
       </p>
-      <div class="contato-info-topo">
+    </div>
+
+    <div class="contato-grid">
+      <!-- Esquerda: contatos + CTA -->
+      <div>
         <div class="contato-item">
           <span class="contato-label">WhatsApp</span>
           <span class="contato-valor">(11) 4374-1168</span>
@@ -1204,33 +1206,30 @@
           <span class="contato-label">Instagram</span>
           <span class="contato-valor">@ro2hair</span>
         </div>
-      </div>
-    </div>
-
-    <!-- Endereço + Mapa alinhados -->
-    <div class="contato-grid">
-      <div>
-        <div class="contato-item">
-          <span class="contato-label">Endereço</span>
-          <a class="contato-valor contato-mapa" href="https://www.google.com/maps/search/?api=1&query=Estrada+do+Gopiuva,+1337,+Parque+Jandaia,+Carapicu%C3%ADba,+SP,+06330-000" target="_blank">
-            Estrada do Gopiuva, 1337, Sala 08 Sub Loja<br>
-            Parque Jandaia · Carapicuíba/SP · 06330-000
-          </a>
-        </div>
         <div class="contato-cta">
           <a href="https://wa.me/551143741168?text=Oi%20Rosana%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" class="btn-primary">
             Agendar meu horário
           </a>
         </div>
       </div>
-      <iframe
-        class="contato-mapa-embed"
-        src="https://maps.google.com/maps?q=Estrada+do+Gopiuva,+1337,+Parque+Jandaia,+Carapicu%C3%ADba,+SP,+06330-000&output=embed&z=15"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Localização Studio Ro2Hair">
-      </iframe>
+      <!-- Direita: endereço + mapa -->
+      <div class="contato-direita">
+        <div class="contato-item">
+          <span class="contato-label">📍 Endereço</span>
+          <a class="contato-valor contato-mapa" href="https://www.google.com/maps/search/?api=1&query=Estrada+do+Gopiuva,+1337,+Parque+Jandaia,+Carapicu%C3%ADba,+SP,+06330-000" target="_blank">
+            Estrada do Gopiuva, 1337, Sala 08 Sub Loja<br>
+            Parque Jandaia · Carapicuíba/SP · 06330-000
+          </a>
+        </div>
+        <iframe
+          class="contato-mapa-embed"
+          src="https://maps.google.com/maps?q=Estrada+do+Gopiuva,+1337,+Parque+Jandaia,+Carapicu%C3%ADba,+SP,+06330-000&output=embed&z=15"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Localização Studio Ro2Hair">
+        </iframe>
+      </div>
     </div>
   </section>
 
