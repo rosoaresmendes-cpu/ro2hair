@@ -635,64 +635,91 @@
 
     /* ── CONTATO ── */
     #contato {
-      background: var(--white);
-      padding: 64px 60px;
+      background: var(--tiffany);
+      padding: 60px 60px 0;
     }
 
-    .contato-topo {
-      margin-bottom: 44px;
-    }
-
-    .contato-grid {
+    .contato-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;
       align-items: start;
     }
 
-    .contato-direita {
+    .contato-col-esq {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 28px;
     }
 
-    .contato-item {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      margin-bottom: 16px;
-    }
+    .contato-logo-wrap { display: block; }
+    .contato-logo-wrap img { height: 90px; width: auto; display: block; }
 
-    .contato-grid .contato-item {
-      margin-bottom: 12px;
-    }
-
-    .contato-label {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--tiffany);
-    }
-
-    .contato-valor {
+    .contato-slogan {
       font-family: var(--display);
-      font-size: 19px;
-      font-weight: 300;
-      color: var(--text);
+      font-style: italic;
+      font-size: 17px;
+      color: rgba(255,255,255,0.9);
     }
 
-    .contato-mapa {
+    .contato-bloco { display: flex; flex-direction: column; gap: 10px; }
+
+    .contato-subtitulo {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .contato-lista {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .contato-lista li {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.85);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contato-lista.check li::before {
+      content: '✓';
+      color: white;
+      font-weight: 600;
+    }
+
+    .contato-lista a {
+      color: rgba(255,255,255,0.85);
       text-decoration: none;
-      color: var(--text);
-      line-height: 1.5;
       transition: color 0.2s;
     }
 
-    .contato-mapa:hover { color: var(--tiffany); }
+    .contato-lista a:hover { color: white; }
 
-    .contato-cta {
-      margin-top: 4px;
+    .contato-col-dir {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .contato-pin svg {
+      width: 34px;
+      height: 34px;
+      fill: white;
+    }
+
+    .contato-endereco-texto {
+      font-size: 15px;
+      font-weight: 400;
+      color: white;
+      text-align: center;
+      line-height: 1.7;
     }
 
     .contato-mapa-embed {
@@ -700,7 +727,15 @@
       height: 260px;
       border: 0;
       display: block;
-      filter: grayscale(20%) contrast(1.05);
+    }
+
+    .contato-copyright {
+      text-align: center;
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      padding: 24px 0;
+      margin-top: 48px;
+      border-top: 1px solid rgba(255,255,255,0.15);
     }
 
     /* ── PARA QUEM ── */
@@ -877,8 +912,10 @@
       .depoimentos-grid { grid-template-columns: 1fr; }
 
       /* Contato */
-      .contato-grid { grid-template-columns: 1fr; gap: 32px; }
-      .contato-mapa-embed { height: 240px; }
+      #contato { padding: 48px 20px 0; }
+      .contato-inner { grid-template-columns: 1fr; gap: 40px; }
+      .contato-col-dir { width: 100%; }
+      .contato-mapa-embed { height: 220px; }
 
       /* Atendimento */
       .atendimento-destaque { padding: 48px 20px; }
@@ -1186,45 +1223,49 @@
     </div>
   </section>
 
-  <!-- CONTATO -->
+  <!-- CONTATO + FOOTER -->
   <section id="contato">
-    <div class="contato-topo">
-      <span class="section-tag">✦ Contato</span>
-      <h2 class="section-title">
-        Vamos conversar<br>
-        sobre seu <em class="buffalo">cabelo</em>.
-      </h2>
-      <p class="section-text">
-        O primeiro passo é uma avaliação. Me conta o que você busca e eu te digo o que é possível, com honestidade e compromisso.
-      </p>
-    </div>
+    <div class="contato-inner">
 
-    <div class="contato-grid">
-      <!-- Esquerda: contatos + CTA -->
-      <div>
-        <div class="contato-item">
-          <span class="contato-label">WhatsApp</span>
-          <span class="contato-valor">(11) 4374-1168</span>
+      <!-- Coluna esquerda: logo + título + contatos + CTA -->
+      <div class="contato-col-esq">
+        <a href="#hero" class="contato-logo-wrap">
+          <img src="assets/logo-branca.png" alt="Studio Ro2Hair | Rosana Teles" />
+        </a>
+        <div class="contato-bloco">
+          <span class="section-tag" style="color:rgba(255,255,255,0.7)">✦ Contato</span>
+          <h2 class="section-title" style="color:white; font-size:clamp(28px,3vw,40px)">
+            Vamos conversar<br>
+            sobre seu <em class="buffalo">cabelo</em>.
+          </h2>
+          <p class="section-text" style="color:rgba(255,255,255,0.8); max-width:100%">
+            O primeiro passo é uma avaliação. Me conta o que você busca e eu te digo o que é possível, com honestidade e compromisso.
+          </p>
         </div>
-        <div class="contato-item">
-          <span class="contato-label">Instagram</span>
-          <span class="contato-valor">@ro2hair</span>
+        <div class="contato-bloco">
+          <p class="contato-subtitulo">WhatsApp</p>
+          <p style="color:rgba(255,255,255,0.9); font-size:16px; font-weight:300">(11) 4374-1168</p>
         </div>
-        <div class="contato-cta">
-          <a href="https://wa.me/551143741168?text=Oi%20Rosana%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" class="btn-primary">
-            Agendar meu horário
-          </a>
+        <div class="contato-bloco">
+          <p class="contato-subtitulo">Instagram</p>
+          <p style="color:rgba(255,255,255,0.9); font-size:16px; font-weight:300">@ro2hair</p>
         </div>
+        <a href="https://wa.me/551143741168?text=Oi%20Rosana%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" class="btn-primary" style="align-self:flex-start; background:white; color:var(--tiffany)">
+          Agendar meu horário
+        </a>
       </div>
-      <!-- Direita: endereço + mapa -->
-      <div class="contato-direita">
-        <div class="contato-item">
-          <span class="contato-label">Endereço</span>
-          <a class="contato-valor contato-mapa" href="https://www.google.com/maps/search/?api=1&query=Estrada+do+Gopiuva,+1337,+Parque+Jandaia,+Carapicu%C3%ADba,+SP,+06330-000" target="_blank">
-            Estrada do Gopiuva, 1337, Sala 08 Sub Loja<br>
-            Parque Jandaia · Carapicuíba/SP · 06330-000
-          </a>
+
+      <!-- Coluna direita: pin + endereço + mapa -->
+      <div class="contato-col-dir">
+        <div class="contato-pin">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          </svg>
         </div>
+        <p class="contato-endereco-texto">
+          Estrada do Gopiuva, 1337, Sala 08 Sub Loja<br>
+          Parque Jandaia · Carapicuíba/SP · 06330-000
+        </p>
         <iframe
           class="contato-mapa-embed"
           src="https://maps.google.com/maps?q=Estrada+do+Gopiuva,+1337,+Parque+Jandaia,+Carapicu%C3%ADba,+SP,+06330-000&output=embed&z=15"
@@ -1234,23 +1275,12 @@
           title="Localização Studio Ro2Hair">
         </iframe>
       </div>
+
+    </div>
+    <div class="contato-copyright">
+      Copyright © Studio Ro2Hair. Todos os direitos reservados.
     </div>
   </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <a href="#hero" class="footer-logo">
-      <img src="assets/logo-branca.png" alt="Studio Ro2Hair | Rosana Teles" />
-    </a>
-    <div class="footer-links">
-      <a href="#sobre">Sobre</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#depoimentos">Depoimentos</a>
-      <a href="https://instagram.com/ro2hair" target="_blank">Instagram</a>
-      <a href="https://wa.me/551143741168" target="_blank">WhatsApp</a>
-    </div>
-    <div class="footer-copy">© 2025 Studio Ro2Hair</div>
-  </footer>
 
   <!-- WHATSAPP FLOAT -->
   <a href="https://wa.me/551143741168?text=Oi%20Rosana%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" class="whatsapp-float" title="Chamar no WhatsApp">
