@@ -635,8 +635,8 @@
 
     /* ── CONTATO ── */
     #contato {
-      background: var(--tiffany);
-      padding: 60px 60px 0;
+      background: var(--white);
+      padding: 64px 60px;
     }
 
     .contato-inner {
@@ -665,10 +665,11 @@
     .contato-bloco { display: flex; flex-direction: column; gap: 10px; }
 
     .contato-subtitulo {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.95);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--tiffany);
     }
 
     .contato-lista {
@@ -711,13 +712,13 @@
     .contato-pin svg {
       width: 34px;
       height: 34px;
-      fill: white;
+      fill: var(--tiffany);
     }
 
     .contato-endereco-texto {
       font-size: 15px;
       font-weight: 400;
-      color: white;
+      color: var(--muted);
       text-align: center;
       line-height: 1.7;
     }
@@ -1227,30 +1228,27 @@
   <section id="contato">
     <div class="contato-inner">
 
-      <!-- Coluna esquerda: logo + título + contatos + CTA -->
+      <!-- Coluna esquerda: título + contatos + CTA -->
       <div class="contato-col-esq">
-        <a href="#hero" class="contato-logo-wrap">
-          <img src="assets/logo-branca.png" alt="Studio Ro2Hair | Rosana Teles" />
-        </a>
         <div class="contato-bloco">
-          <span class="section-tag" style="color:rgba(255,255,255,0.7)">✦ Contato</span>
-          <h2 class="section-title" style="color:white; font-size:clamp(28px,3vw,40px)">
+          <span class="section-tag">✦ Contato</span>
+          <h2 class="section-title">
             Vamos conversar<br>
             sobre seu <em class="buffalo">cabelo</em>.
           </h2>
-          <p class="section-text" style="color:rgba(255,255,255,0.8); max-width:100%">
+          <p class="section-text">
             O primeiro passo é uma avaliação. Me conta o que você busca e eu te digo o que é possível, com honestidade e compromisso.
           </p>
         </div>
         <div class="contato-bloco">
           <p class="contato-subtitulo">WhatsApp</p>
-          <p style="color:rgba(255,255,255,0.9); font-size:16px; font-weight:300">(11) 4374-1168</p>
+          <p style="font-family:var(--display); font-size:18px; font-weight:300; color:var(--text)">(11) 4374-1168</p>
         </div>
         <div class="contato-bloco">
           <p class="contato-subtitulo">Instagram</p>
-          <p style="color:rgba(255,255,255,0.9); font-size:16px; font-weight:300">@ro2hair</p>
+          <p style="font-family:var(--display); font-size:18px; font-weight:300; color:var(--text)">@ro2hair</p>
         </div>
-        <a href="https://wa.me/551143741168?text=Oi%20Rosana%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" class="btn-primary" style="align-self:flex-start; background:white; color:var(--tiffany)">
+        <a href="https://wa.me/551143741168?text=Oi%20Rosana%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" class="btn-primary">
           Agendar meu horário
         </a>
       </div>
@@ -1277,10 +1275,22 @@
       </div>
 
     </div>
-    <div class="contato-copyright">
-      Copyright © Studio Ro2Hair. Todos os direitos reservados.
-    </div>
   </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="#hero" class="footer-logo">
+      <img src="assets/logo-branca.png" alt="Studio Ro2Hair | Rosana Teles" />
+    </a>
+    <div class="footer-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="https://instagram.com/ro2hair" target="_blank">Instagram</a>
+      <a href="https://wa.me/551143741168" target="_blank">WhatsApp</a>
+    </div>
+    <div class="footer-copy">© 2025 Studio Ro2Hair</div>
+  </footer>
 
   <!-- WHATSAPP FLOAT -->
   <a href="https://wa.me/551143741168?text=Oi%20Rosana%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" class="whatsapp-float" title="Chamar no WhatsApp">
